@@ -6,13 +6,14 @@ import { randomUUID } from "crypto";
 
 export async function transactionsRoutes(app: FastifyInstance) {
     app.post("/", async (req, res) => {
+        console.log("oi")
 
         const { title, amount, type } = createTransactionsBodySchema.parse(req.body);
         
-        const transaction = knex("transaction").insert({
+        await knex("transaction").insert({
             id: randomUUID(),
             title,
-            amount: type === "credit" ? amount : amount * -1
+            amount: type === "credit" ? amount : amount * -1,
         })
 
 
