@@ -2,7 +2,7 @@ import { env } from "./env";
 import fastify from "fastify";
 import { knex } from "./database";
 import crypto from "node:crypto";
-import { transactionsRoutes } from "./env/routes/transactions";
+import { transactionsRoutes } from "./routes/transactions";
 import fastifyCookie from "@fastify/cookie";
 
 const app = fastify();
