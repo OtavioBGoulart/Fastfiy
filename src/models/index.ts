@@ -7,6 +7,6 @@ export const createTransactionsBodySchema = z.object({
 })
 
 export const createTransactionIdSchema = z.object({
-    id: z.string().uuid()
-})
+    id: z.string().uuid(),
+});
 

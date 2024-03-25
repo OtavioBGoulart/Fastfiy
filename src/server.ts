@@ -1,16 +1,5 @@
+import { app } from "./app";
 import { env } from "./env";
-import fastify from "fastify";
-import { knex } from "./database";
-import crypto from "node:crypto";
-import { transactionsRoutes } from "./routes/transactions";
-import fastifyCookie from "@fastify/cookie";
-
-const app = fastify();
-
-app.register(fastifyCookie)
-app.register(transactionsRoutes, {
-    prefix: "transactions"
-});
 
 app.listen({
     port: env.PORT
